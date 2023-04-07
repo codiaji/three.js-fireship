@@ -30,7 +30,10 @@ const material = new THREE.MeshStandardMaterial({
 const torus = new THREE.Mesh(geometry, material);
 
 scene.add(torus);
-renderer.render(scene, camera);
+
+const pointLight = new THREE.PointLight(0xffffff);
+pointLight.position.set(5, 5, 5);
+scene.add(pointLight);
 
 function animate() {
 	requestAnimationFrame(animate);
